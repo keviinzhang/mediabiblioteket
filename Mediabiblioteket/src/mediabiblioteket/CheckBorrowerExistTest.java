@@ -25,8 +25,8 @@ class CheckBorrowerExistTest {
 
     @BeforeEach
     void controllerTest() {
-        theController = new LibraryController();
-        theController.currentBorrower = borrower1;
+        theController = new LibraryController();// Innan varje test skapar den variabeln theController
+        theController.currentBorrower = borrower1;// Innan varje test spapar den variabeln currentBorrower
     }
 
     @Test
