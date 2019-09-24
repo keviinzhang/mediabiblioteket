@@ -19,8 +19,8 @@ import collections.LinkedList;
 class CheckBorrowerExistTest {
 
 	private static LibraryController theController;
-    Borrower borrower1 = new Borrower("Harald Svensson", "891216-1111", "040-471024");
-    Media media2 = new Book("Bok", "Historiens matematik", "775534", 1991, "Thompson");
+    Borrower borrower1 = new Borrower("Harald Svensson", "891216-1111", "040-471024"); // Skapar ny lånare
+    Media media2 = new Book("Bok", "Historiens matematik", "775534", 1991, "Thompson"); // Skapar ny låneobjekt till användaren
     
 
     @BeforeEach
@@ -32,21 +32,21 @@ class CheckBorrowerExistTest {
     @Test
     @DisplayName("Exists")
     void testCheckBorrower() throws FileNotFoundException {
-        boolean borrowerFound = theController.checkIfBorrowerExist("891216-1111");
+        boolean borrowerFound = theController.checkIfBorrowerExist("891216-1111");// Kollar om användaren finns i systemet
         assertTrue(borrowerFound);
     }
     
     @Test
     @DisplayName("Doesn't exist")
     void testCheckBorrower2() throws FileNotFoundException {
-        boolean borrowerFound = theController.checkIfBorrowerExist("891216-6969");
+        boolean borrowerFound = theController.checkIfBorrowerExist("891216-6969");// Kollar så att användaren inte finns i systemet
         assertFalse(borrowerFound);
     }
     
     @Test
     @DisplayName("Load Borrower File")
     void testLoadBorrowedMedia() throws FileNotFoundException {
-        boolean mediaFileFound = theController.loadBorrowedMedia();
+        boolean mediaFileFound = theController.loadBorrowedMedia();// Laddar upp medier som har lånats ut
         assertTrue(mediaFileFound);
     }
     
@@ -65,7 +65,7 @@ class CheckBorrowerExistTest {
         LinkedList<Media> mediaSearchResults = theController.mediaSearchResults;
         Media media1 = theController.allMediaObjects.get(6);
         mediaSearchResults.add(media1);
-        Media input = theController.getMediaFromSearchResult(media1.toString());
+        Media input = theController.getMediaFromSearchResult(media1.toString()); // Listar alla medier med de bokstäver man skriver in
         
         assertEquals(input, media1);
     }
