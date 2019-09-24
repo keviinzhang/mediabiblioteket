@@ -59,7 +59,7 @@ class CheckBorrowerExistTest {
         theSearchString.toString();
         theController.searchMediaTitleByString(theSearchString); //Fungerar om man mockar GUI.
     }
-@Test
+    @Test
     @DisplayName("Search Results")
     void testMediaSearchResults() throws FileNotFoundException {
         LinkedList<Media> mediaSearchResults = theController.mediaSearchResults;
