@@ -87,6 +87,21 @@ class CheckBorrowerExistTest {
         }
     }
     
+    @Test
+    @DisplayName("Borrow Media")
+    public void borrowMediaTest() throws FileNotFoundException {
+        theController.currentBorrower = borrower1;
+        theController.borrowMedia(media2); //Kan behöva två körningar för att funka.
+    }
+
+    @Test
+    @DisplayName("Return Media")
+    public void returnMediaTest() throws FileNotFoundException {
+        theController.currentBorrower = borrower1;
+        theController.returnMedia(media2);
+    }
+
+    
     @BeforeAll
     static void setUpBeforeClass() throws Exception {
     }
